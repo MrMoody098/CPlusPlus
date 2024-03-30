@@ -1,8 +1,10 @@
 #include <cstdio>
+#include <string> // Add the missing string header
 
-int rileysGay(){
-    for(int i = 0; i <10000;i++)printf("Riley is gay\n");
-    return 0;
+int printMessage(int times, const std::string& Message){ // Change the parameter name to avoid redeclaration
+    for(int i = 0; i < times; i++) // Change the loop variable name to avoid redeclaration
+        printf("%s\n", Message.c_str()); // Use c_str() to print the string
+    return 0;//returns 0 defaut escape code for success
 }
 
 
@@ -10,7 +12,7 @@ int rileysGay(){
 
 
 int main(){
-    rileysGay();
+    printMessage(200,"message");
 
     bool Condition = false;
     unsigned short a = 0b1010101010;
@@ -26,4 +28,5 @@ int main(){
     printf("There are %u,%o Leaves Here.\n",usInt1,usInt1);//u is the orignal one x is for hex and %o is for octal
     if(Condition) return 0;
     else return 1;
+
 }
