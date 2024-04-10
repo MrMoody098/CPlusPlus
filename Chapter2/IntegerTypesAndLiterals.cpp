@@ -4,6 +4,7 @@
 int printMessage(int times, const std::string& Message){ // Change the parameter name to avoid redeclaration
     for(int i = 0; i < times; i++) // Change the loop variable name to avoid redeclaration
         printf("%s\n", Message.c_str()); // Use c_str() to print the string
+
     return 0;//returns 0 defaut escape code for success
 }
 
@@ -12,7 +13,7 @@ int printMessage(int times, const std::string& Message){ // Change the parameter
 
 
 int main(){
-    printMessage(200,"message");
+    printMessage(2,"message");
 
     bool Condition = false;
     unsigned short a = 0b1010101010;
@@ -21,7 +22,7 @@ int main(){
     printf("%d\n",b);
     unsigned long long d = 0xFFFFFFFFFFFFF;
     printf("%llu\n",d);
-
+    
     unsigned int usInt = 3669732608;
     printf("Yabba %x!\n",usInt);
     unsigned int usInt1 =69;
