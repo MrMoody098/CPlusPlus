@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <stdexcept>
-//2-1
+//2-1 create an enum class Operation that has values Add,Subtract,Multiply and Divide
+
 enum class Operation{
     Add,
     Subtract,
@@ -18,6 +19,7 @@ const char* operationToString(Operation op) {
     }
     return nullptr;
 }
+//2-2 Create a struct calculator. it should have a single constructer that takes an Operatioin
 
 struct Calculator{
     Operation op;
@@ -25,7 +27,7 @@ struct Calculator{
     Calculator(Operation op) : op(op) {
         printf("%s Calculator is ready to use\n", operationToString(op));
     }
-
+    //create a caluclate function
     int calculate(int a, int b){
         switch(op){
             case Operation::Add: {
