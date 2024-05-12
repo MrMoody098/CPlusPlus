@@ -1,0 +1,31 @@
+//An object is region of storage that has a type and a value. 
+//when you declare a variable you declare an object.
+//A variable is simply an object 
+
+
+ALLOCATION DEALLOCATION AND LIFETIME
+
+//every object requires storage
+we reserve storage in a process called ALLOCATION
+
+//when your done you release the storage during DEALLOCATION
+
+//LIFETIME is a running property that is bound by the objects storage duration
+it begins once its contructor completes and it ends just before a destructor is invoked
+
+//each object passes through these stages
+
+    1. The object's storage duration begins, and storage is allocated.
+    2.The objects contructor is called.
+    3.The objects lifetime begins,
+    4.You can use the object in your program.
+    5.The object's lifetime ends,
+    6.The object's destructor is called
+    7.The objects storageduration ends, and storage is deallocated.#
+
+MEMORY MANAGEMENT
+    we must craft object lifetimes in c++ it is not the garbage collectors job
+    creates faster code but programmers need more intement knoledge of MEMORY MANAGEMENT system
+
+AUTOMATIC storage duration
+    //

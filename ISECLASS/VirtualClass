@@ -1,0 +1,98 @@
+#include <iostream>
+#include <string>
+
+// Base class 1
+class Person {
+protected:
+    std::string name;
+
+public:
+    Person(const std::string& n) : name(n) {}
+    void displayPerson() const {
+        std::cout << "Person: " << name << std::endl;
+    }
+};
+
+// Base class 2
+class Employee {
+protected:
+    int employeeID;
+
+public:
+    Employee(int id) : employeeID(id) {}
+    void displayEmployee() const {
+        std::cout << "Employee ID: " << employeeID << std::endl;
+    }
+};
+
+// Derived class
+class Manager : public Person, public Employee {
+private:
+    std::string department;
+
+public:
+    Manager(const std::string& n, int id, const std::string& dept) 
+        : Person(n), Employee(id), department(dept) {}
+
+    void displayManager() const {
+        displayPerson();
+        displayEmployee();
+        std::cout << "Department: " << department << std::endl;
+    }
+};
+
+int main() {
+    // Creating a Manager object
+    Manager manager("John Doe", 1001, "Sales");
+
+    // Displaying manager information
+    manager.displayManager();
+
+    return 0;
+}
+
+
+
+#include <iostream>
+#include <stdexcept>
+
+// Custom exception class for file-related errors
+class FileException : public std::exception {
+public:
+    virtual const char* what() const noexcept override {
+        return "File exception occurred";
+    }
+};
+
+// Custom exception class for file not found error
+class FileNotFoundException : public FileException {
+public:
+    virtual const char* what() const noexcept override {
+        return "File not found";
+    }
+};
+
+// Custom exception class for file read error
+class FileReadException : public FileException {
+public:
+    virtual const char* what() const noexcept override {
+        return "Error occurred while reading file";
+    }
+};
+
+// Function to simulate file read operation
+void readFile(const std::string& filename) {
+    // Simulating file read operation (assuming file does not exist)
+    throw FileNotFoundException();
+}
+
+int main() {
+    try {
+        // Simulate file read operation
+        readFile("example.txt");
+    } catch (const FileException& ex) {
+        std::cerr << "Exception: " << ex.what() << std::endl;
+    }
+
+    return 0;
+}

@@ -142,3 +142,55 @@ int main(){
 
     return 0;
 }
+
+// Shallow copy constructor
+Circle(const Circle& other, bool isShallow = true) : radius(other.radius), dynamicArray(other.dynamicArray) {}
+
+// Deep copy constructor
+Circle(const Circle& other, int deepCopyTag) : radius(other.radius) {
+    if (deepCopyTag == 1) {
+        dynamicArray = new int[5];
+        for (int i = 0; i < 5; ++i) {
+            dynamicArray[i] = other.dynamicArray[i];
+        }
+    } else {
+        dynamicArray = other.dynamicArray;
+    }
+}
+
+
+        int& getLargest(int& num1, int& num2) {
+            return (num1 > num2) ? num1 : num2; // Returns a reference to the larger of the two numbers
+        }
+
+
+void exampleFunction() {
+    int x = 10; // Variable x is stack allocated
+    // Memory for x is automatically deallocated when exampleFunction() returns
+}
+
+
+#include <memory>
+
+void exampleFunction() {
+    std::unique_ptr<int> ptr = std::make_unique<int>(); // Unique pointer to int
+    // Use ptr...
+    // Memory is automatically deallocated when ptr goes out of scope
+}
+
+
+class MyClass {
+private:
+    int data;
+
+public:
+    friend class FriendClass;
+};
+
+class FriendClass {
+public:
+    void accessPrivateMember(const MyClass& obj) {
+        // Friend class can access private members of MyClass
+        cout << "Accessing private member of MyClass: " << obj.data << endl;
+    }
+};
