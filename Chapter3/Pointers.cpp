@@ -36,7 +36,7 @@ void AddressingVariables(){
     printf("the value of mn_pointer is %p\n",my_pointer);
 
 
-    //you can obtain the address of variable by appending the address-of opterator (&)
+    //you can obtain the address of variable by appending the address-of operator (&)
     int my_int{};
     printf("my_int is %d\n",my_int);
     int *my_int_address = &my_int;
@@ -50,7 +50,7 @@ void AddressingVariables(){
 };
 void DereferencingPointers(){
     //dereference a pointer by prepending the pointer with an asterisk(*)
-    //it is the oppodite of the address-of operator (&)
+    //it is the opposite of the address-of operator (&)
     
     int gettysburg{};
     int* gettysburg_address = &gettysburg;
